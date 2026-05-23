@@ -1,3 +1,12 @@
-# Metrics
+# Metrics (vendor-neutral)
 
-(placeholder) Define core metrics: success_rate, retry_count, latency_p95, dlq_depth.
+## Core metrics per workflow
+- `workflow_success_total`
+- `workflow_failure_total`
+- `workflow_retry_total`
+- `workflow_duration_ms` (histogram)
+- `dlq_depth`
+
+## Suggested SLOs
+- Success rate ≥ 99% for critical workflows
+- P95 duration: define per workflow

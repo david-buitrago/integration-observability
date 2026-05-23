@@ -1,3 +1,20 @@
-# Log schema
+# Log schema (vendor-neutral)
 
-(placeholder) Define required fields: correlation_id, workflow, step, attempt, duration_ms, error_class, etc.
+## Required fields
+- `timestamp`
+- `correlation_id`
+- `workflow`
+- `step`
+- `status` — success|retry|failed
+- `attempt`
+- `duration_ms`
+- `error_class` (when failed)
+
+## Optional fields
+- `idempotency_key`
+- `external_system`
+- `http_status`
+- `payload_bytes`
+
+## Why this matters
+If you can grep `correlation_id` across services, your integrations become debuggable.
